@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-pnpm)",
+      "Bash(curl -s \"https://calamitymod.wiki.gg/wiki/Class_setups\")",
+      "Bash(curl -s \"https://calamitymod.wiki.gg/wiki/Guide:Class_setups/Pre-Hardmode\")",
+      "Bash(pnpm build *)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill *)",
+      "Bash(pnpm dev *)",
+      "WebFetch(domain:calamitymod.wiki.gg)",
+      "WebFetch(domain:itemlevel.net)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebSearch"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080810;
+  --foreground: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.phase-card {
+  scroll-margin-top: 88px;
+}
+
+/* Class card hover — uses --card-glow CSS variable set inline */
+.class-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.class-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px var(--card-glow, rgba(129,140,248,0.15)), 0 0 0 1px var(--card-border, rgba(129,140,248,0.3));
+  border-color: var(--card-border, rgba(129,140,248,0.3));
+}
+
+/* Item pill hover — uses --item-color CSS variable set inline */
+.item-pill {
+  background: var(--item-bg, rgba(129,140,248,0.08));
+  border: 1px solid var(--item-border, rgba(129,140,248,0.2));
+  color: #cbd5e1;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.item-pill:hover {
+  background: var(--item-bg-hover, rgba(129,140,248,0.15));
+  border-color: var(--item-border-hover, rgba(129,140,248,0.4));
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0d0d1a; }
+::-webkit-scrollbar-thumb { background: #1e1e35; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #2d2d50; }
