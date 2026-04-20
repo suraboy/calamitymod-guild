@@ -44,6 +44,18 @@ body {
   border-color: var(--item-border-hover, rgba(129,140,248,0.4));
 }
 
+/* Item card — grid-style item display with large image */
+.item-card {
+  background: var(--item-bg, rgba(129,140,248,0.06));
+  border: 1px solid var(--item-border, rgba(129,140,248,0.15));
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.item-card:hover {
+  background: var(--item-bg-hover, rgba(129,140,248,0.14));
+  border-color: var(--item-border-hover, rgba(129,140,248,0.4));
+  box-shadow: 0 0 16px var(--item-glow, rgba(129,140,248,0.2));
+}
+
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: #0d0d1a; }
 ::-webkit-scrollbar-thumb { background: #1e1e35; border-radius: 4px; }

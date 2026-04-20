@@ -32,19 +32,25 @@ function ItemPill({ item, color }: { item: Item; color: string }) {
       href={wikiUrl(item.wikiSlug)}
       target="_blank"
       rel="noopener noreferrer"
-      className="item-pill group inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium"
+      className="item-card group flex flex-col items-center gap-1.5 rounded-xl p-2 text-center"
       style={{
-        '--item-bg':          `${color}10`,
-        '--item-border':      `${color}25`,
-        '--item-bg-hover':    `${color}20`,
-        '--item-border-hover':`${color}50`,
+        '--item-bg':           `${color}08`,
+        '--item-border':       `${color}20`,
+        '--item-bg-hover':     `${color}18`,
+        '--item-border-hover': `${color}45`,
+        '--item-glow':         `${color}30`,
       } as React.CSSProperties}
+      title={item.name}
     >
-      <ItemImage src={wikiImageUrl(item.wikiSlug)} alt={item.name} />
-      <span className="text-slate-300">{item.name}</span>
-      <svg className="h-2.5 w-2.5 opacity-30 group-hover:opacity-70 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
+      <div
+        className="flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-200 group-hover:scale-110"
+        style={{ background: `${color}12`, border: `1px solid ${color}25` }}
+      >
+        <ItemImage src={wikiImageUrl(item.wikiSlug)} alt={item.name} size={36} />
+      </div>
+      <span className="line-clamp-2 max-w-[72px] text-[10px] leading-tight text-slate-500 transition-colors group-hover:text-slate-200">
+        {item.name}
+      </span>
     </a>
   )
 }
@@ -105,7 +111,7 @@ function PhaseCard({ phase, classId, color }: { phase: Phase; classId: ClassId; 
                     {items.length}
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="grid grid-cols-3 gap-1">
                   {items.map((item) => (
                     <ItemPill key={item.wikiSlug} item={item} color={color} />
                   ))}

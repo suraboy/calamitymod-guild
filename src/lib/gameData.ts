@@ -434,5 +434,7 @@ export function wikiUrl(slug: string): string {
 }
 
 export function wikiImageUrl(slug: string): string {
-  return `https://calamitymod.wiki.gg/wiki/Special:Filepath/${slug}.png`
+  // Sprites extracted from CalamityMod.tmod, stored as CamelCase without underscores
+  const localName = slug.replace(/_/g, '')
+  return `/items/${localName}.png`
 }
