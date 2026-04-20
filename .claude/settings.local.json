@@ -11,7 +11,12 @@
       "WebFetch(domain:calamitymod.wiki.gg)",
       "WebFetch(domain:itemlevel.net)",
       "WebFetch(domain:webcache.googleusercontent.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git -C /Users/sjanpan/Documents/poc/calamitymod-guild status)",
+      "Bash(git -C /Users/sjanpan/Documents/poc/calamitymod-guild log --oneline -3)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git -C /Users/sjanpan/Documents/poc/calamitymod-guild remote get-url origin)"
     ]
   }
 }
