@@ -434,7 +434,7 @@ export function wikiUrl(slug: string): string {
 }
 
 export function localImageUrl(slug: string): string {
-  return `/items/${slug.replace(/_/g, '')}.png`
+  return `/items/${slug.replace(/[^a-zA-Z0-9]/g, '')}.png`
 }
 
 export function wikiImageUrl(slug: string): string {
