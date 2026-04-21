@@ -1,15 +1,17 @@
-# Calamity Mod Guild — คู่มือ Progression
+# Calamity Guild — Progression Guide
 
-เว็บไซต์แนะนำ build และ item progression สำหรับ **Terraria Calamity Mod** แบ่งตาม class และเฟสของเกม
+A class progression guide for **Terraria: Calamity Mod**, covering recommended Weapons, Armor, and Accessories for each phase of the game.
 
 **[calamitymod-guild.onrender.com](https://calamitymod-guild.onrender.com)**
 
+![Calamity Guild Preview](public/screenshot.png)
+
 ## Features
 
-- แนะนำ Weapons / Armor / Accessories ในแต่ละเฟส
-- แบ่งตาม 5 class: Melee, Ranged, Mage, Summoner, Rogue
-- แสดง sprite จริงของ item จากตัวเกม
-- ครอบคลุมตั้งแต่ Pre-Boss ไปจนถึง Post-Moon Lord / Providence
+- Progression guide from Pre-Boss all the way to Post-Moon Lord / Providence
+- Covers 5 classes: Melee, Ranged, Mage, Summoner, Rogue
+- Item sprites extracted directly from the game files
+- Phase-by-phase breakdown with Weapons / Armor / Accessories per class
 
 ## Getting Started
 
@@ -18,15 +20,14 @@ pnpm install
 pnpm dev
 ```
 
-เปิด [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000)
 
 ## Tech Stack
 
-- Next.js 15 (App Router)
-- TypeScript + Tailwind CSS 4
-- Sprites extracted from `CalamityMod.tmod` + terraria.wiki.gg
+- Next.js 15 (App Router) · TypeScript · Tailwind CSS 4
+- Item sprites extracted from `CalamityMod.tmod` and [terraria.wiki.gg](https://terraria.wiki.gg)
 
-## อ้างอิง
+## References
 
 - [calamitymod.wiki.gg](https://calamitymod.wiki.gg)
 - [terraria.wiki.gg](https://terraria.wiki.gg)
