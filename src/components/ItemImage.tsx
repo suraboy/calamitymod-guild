@@ -2,21 +2,41 @@
 
 import { useState } from 'react'
 
-export default function ItemImage({ src, alt, size = 20 }: { src: string; alt: string; size?: number }) {
-  const [failed, setFailed] = useState(false)
+type Stage = 'local' | 'wiki' | 'failed'
 
-  if (failed) {
+export default function ItemImage({
+  src,
+  fallbackSrc,
+  alt,
+  size = 20,
+}: {
+  src: string
+  fallbackSrc?: string
+  alt: string
+  size?: number
+}) {
+  const [stage, setStage] = useState<Stage>('local')
+
+  const handleError = () => {
+    if (stage === 'local' && fallbackSrc) {
+      setStage('wiki')
+    } else {
+      setStage('failed')
+    }
+  }
+
+  if (stage === 'failed') {
     return (
       <svg
         width={size}
         height={size}
         viewBox="0 0 16 16"
         fill="none"
-        style={{ width: size, height: size, opacity: 0.25 }}
+        style={{ width: size, height: size, opacity: 0.2 }}
       >
         <rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M6 6a2 2 0 1 1 4 0c0 1.5-2 2-2 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="8" cy="12" r="0.75" fill="currentColor" />
+        <path d="M5 6a3 3 0 0 1 6 0c0 2-3 2-3 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="8" cy="13" r="0.75" fill="currentColor" />
       </svg>
     )
   }
@@ -24,13 +44,13 @@ export default function ItemImage({ src, alt, size = 20 }: { src: string; alt: s
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={src}
+      src={stage === 'wiki' ? fallbackSrc : src}
       alt={alt}
       width={size}
       height={size}
       style={{ width: size, height: size, imageRendering: 'pixelated' }}
       className="object-contain"
-      onError={() => setFailed(true)}
+      onError={handleError}
     />
   )
 }
