@@ -8,7 +8,6 @@ import {
   type Phase,
   type Item,
   wikiUrl,
-  wikiImageUrl,
   localImageUrl,
 } from '@/lib/gameData'
 import ItemImage from '@/components/ItemImage'
@@ -47,12 +46,7 @@ function ItemPill({ item, color }: { item: Item; color: string }) {
         className="flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-200 group-hover:scale-110"
         style={{ background: `${color}12`, border: `1px solid ${color}25` }}
       >
-        <ItemImage
-          src={localImageUrl(item.wikiSlug)}
-          fallbackSrc={wikiImageUrl(item.wikiSlug)}
-          alt={item.name}
-          size={36}
-        />
+        <ItemImage src={localImageUrl(item.wikiSlug)} alt={item.name} size={36} />
       </div>
       <span className="line-clamp-2 max-w-[72px] text-[10px] leading-tight text-slate-500 transition-colors group-hover:text-slate-200">
         {item.name}
